@@ -15,6 +15,108 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
+// Define the Transport Schema
+const transportSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: false,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+});
+
+// Define the Activity Schema
+const activitySchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+});
+
+// Define the Accommodation Schema
+const accommodationSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  reserved: {
+    type: Boolean,
+    required: true,
+  },
+  notes: {
+    type: String,
+    required: false,
+  },
+  url: {
+    type: String,
+    required: false,
+  },
+});
+
+// Define the Food Schema
+const foodSchema = new mongoose.Schema({
+  petitDejeuner: {
+    price: {
+      type: Number,
+      required: true,
+    },
+  },
+  dejeuner: {
+    price: {
+      type: Number,
+      required: true,
+    },
+  },
+  diner: {
+    price: {
+      type: Number,
+      required: true,
+    },
+  },
+});
+
+// Define the Location Schema
+const locationSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  lat: {
+    type: Number,
+    required: false,
+  },
+  lon: {
+    type: Number,
+    required: false,
+  },
+});
+
 // Define the Day Schema
 const daySchema = new mongoose.Schema({
   id: {
@@ -29,41 +131,45 @@ const daySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  location: locationSchema,
+  generalInfo: {
+    planning: {
+      type: String,
+      required: true,
+    },
+  },
+  accommodation: accommodationSchema,
+  food: foodSchema,
+  transports: [transportSchema],
+  activities: [activitySchema],
 });
 
 // Define the Travel Plan Schema
 const travelPlanSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
   color: {
     type: String,
     required: true,
-    default: "#ffb268",
-  },
-  days: {
-    type: [daySchema],
-    default: [],
   },
   font: {
     type: String,
     required: true,
-    default: "Arial",
+  },
+  textColor: {
+    type: String,
+    required: true,
   },
   id: {
     type: Number,
     required: true,
   },
-  name: {
-    type: String,
-    required: true,
-    default: "Rome",
-  },
+  days: [daySchema],
   notes: {
     type: [String],
     default: [],
-  },
-  textColor: {
-    type: String,
-    required: true,
-    default: "#000000",
   },
 });
 

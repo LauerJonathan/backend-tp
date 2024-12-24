@@ -1,0 +1,244 @@
+{
+  "id": 1735019257788,
+  "name": "Voyage Espagne 2024",
+  "color": "#ff4500",
+  "font": "Arial",
+  "textColor": "#ffffff",
+  "days": [
+    {
+      "id": 1735019264969,
+      "name": "Jour 1 - Madrid",
+      "date": "2024-04-01",
+      "location": {
+        "name": "Madrid",
+        "lat": 40.4168,
+        "lon": -3.7038
+      },
+      "generalInfo": {
+        "planning": "Visite du Palais Royal et du musée du Prado"
+      },
+      "accommodation": {
+        "name": "Hôtel Royal Madrid",
+        "type": "Hotel",
+        "price": 120,
+        "reserved": true,
+        "notes": "Proche du Palais Royal",
+        "url": "https://www.hotelroyalmadrid.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 8
+        },
+        "dejeuner": {
+          "price": 18
+        },
+        "diner": {
+          "price": 30
+        }
+      },
+      "transports": [
+        {
+          "id": 1,
+          "type": "metro",
+          "description": "Métro de Madrid",
+          "price": "2"
+        }
+      ],
+      "activities": [
+        {
+          "id": 1,
+          "description": "Visite guidée du Palais Royal",
+          "price": "40"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jour 2 - Barcelone",
+      "date": "2024-04-02",
+      "location": {
+        "name": "Barcelone",
+        "lat": 41.3784,
+        "lon": 2.1925
+      },
+      "generalInfo": {
+        "planning": "Visite de la Sagrada Familia et du Parc Güell"
+      },
+      "accommodation": {
+        "name": "Hôtel Gaudí",
+        "type": "Hotel",
+        "price": 150,
+        "reserved": true,
+        "notes": "Proche de la Sagrada Familia",
+        "url": "https://www.hotelgaudi.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 10
+        },
+        "dejeuner": {
+          "price": 20
+        },
+        "diner": {
+          "price": 35
+        }
+      },
+      "transports": [
+        {
+          "id": 2,
+          "type": "train",
+          "description": "Train à grande vitesse Madrid-Barcelone",
+          "price": "60"
+        }
+      ],
+      "activities": [
+        {
+          "id": 2,
+          "description": "Visite guidée de la Sagrada Familia",
+          "price": "45"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jour 3 - Séville",
+      "date": "2024-04-03",
+      "location": {
+        "name": "Séville",
+        "lat": 37.3886,
+        "lon": -5.9823
+      },
+      "generalInfo": {
+        "planning": "Visite de l'Alcazar et de la Plaza de España"
+      },
+      "accommodation": {
+        "name": "Hôtel Alcázar",
+        "type": "Hotel",
+        "price": 130,
+        "reserved": true,
+        "notes": "Proche de l'Alcazar",
+        "url": "https://www.hotelalcazar.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 9
+        },
+        "dejeuner": {
+          "price": 18
+        },
+        "diner": {
+          "price": 28
+        }
+      },
+      "transports": [
+        {
+          "id": 3,
+          "type": "avion",
+          "description": "Vol Barcelone-Séville",
+          "price": "90"
+        }
+      ],
+      "activities": [
+        {
+          "id": 3,
+          "description": "Visite guidée de l'Alcazar",
+          "price": "50"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Jour 4 - Grenade",
+      "date": "2024-04-04",
+      "location": {
+        "name": "Grenade",
+        "lat": 37.1743,
+        "lon": -3.5986
+      },
+      "generalInfo": {
+        "planning": "Visite de l'Alhambra et du quartier de l'Albaicín"
+      },
+      "accommodation": {
+        "name": "Hôtel Alhambra",
+        "type": "Hotel",
+        "price": 140,
+        "reserved": true,
+        "notes": "Vue sur l'Alhambra",
+        "url": "https://www.hotelalhambra.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 8
+        },
+        "dejeuner": {
+          "price": 20
+        },
+        "diner": {
+          "price": 35
+        }
+      },
+      "transports": [
+        {
+          "id": 4,
+          "type": "car",
+          "description": "Voiture privée",
+          "price": "40"
+        }
+      ],
+      "activities": [
+        {
+          "id": 4,
+          "description": "Visite guidée de l'Alhambra",
+          "price": "60"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jour 5 - Valence",
+      "date": "2024-04-05",
+      "location": {
+        "name": "Valence",
+        "lat": 39.4699,
+        "lon": -0.3763
+      },
+      "generalInfo": {
+        "planning": "Visite de la Cité des Arts et des Sciences et de la plage de Malvarrosa"
+      },
+      "accommodation": {
+        "name": "Hôtel Malvarrosa",
+        "type": "Hotel",
+        "price": 120,
+        "reserved": true,
+        "notes": "Proche de la plage",
+        "url": "https://www.hotelmalvarrosa.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 7
+        },
+        "dejeuner": {
+          "price": 18
+        },
+        "diner": {
+          "price": 30
+        }
+      },
+      "transports": [
+        {
+          "id": 5,
+          "type": "bus",
+          "description": "Bus local",
+          "price": "10"
+        }
+      ],
+      "activities": [
+        {
+          "id": 5,
+          "description": "Visite de la Cité des Arts et des Sciences",
+          "price": "40"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "id": 1735019257788,
+  "name": "Voyage Italie 2024",
+  "color": "#ff6347",
+  "font": "Arial",
+  "textColor": "#000000",
+  "days": [
+    {
+      "id": 1735019264969,
+      "name": "Jour 1 - Rome",
+      "date": "2024-12-24",
+      "location": {
+        "name": "Rome",
+        "lat": 41.9028,
+        "lon": 12.4964
+      },
+      "generalInfo": {
+        "planning": "Visite du Colisée et du Forum Romain"
+      },
+      "accommodation": {
+        "name": "Hôtel Colosseo",
+        "type": "Hotel",
+        "price": 120,
+        "reserved": true,
+        "notes": "Proche du Colisée",
+        "url": "https://www.hotelcolosseo.it"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 8
+        },
+        "dejeuner": {
+          "price": 20
+        },
+        "diner": {
+          "price": 25
+        }
+      },
+      "transports": [
+        {
+          "id": 1,
+          "type": "car",
+          "description": "Voiture privée",
+          "price": "35"
+        }
+      ],
+      "activities": [
+        {
+          "id": 1,
+          "description": "Visite guidée du Colisée",
+          "price": "50"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jour 2 - Florence",
+      "date": "2024-12-25",
+      "location": {
+        "name": "Florence",
+        "lat": 43.7696,
+        "lon": 11.2558
+      },
+      "generalInfo": {
+        "planning": "Visite de la Galerie des Offices"
+      },
+      "accommodation": {
+        "name": "Hôtel Uffizi",
+        "type": "Hotel",
+        "price": 140,
+        "reserved": true,
+        "notes": "Proche de la Galerie des Offices",
+        "url": "https://www.hoteluffizi.it"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 8
+        },
+        "dejeuner": {
+          "price": 22
+        },
+        "diner": {
+          "price": 30
+        }
+      },
+      "transports": [
+        {
+          "id": 2,
+          "type": "train",
+          "description": "Train rapide Florence-Rome",
+          "price": "45"
+        }
+      ],
+      "activities": [
+        {
+          "id": 2,
+          "description": "Visite guidée des Offices",
+          "price": "60"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jour 3 - Milan",
+      "date": "2024-12-26",
+      "location": {
+        "name": "Milan",
+        "lat": 45.4642,
+        "lon": 9.19
+      },
+      "generalInfo": {
+        "planning": "Visite du Duomo de Milan et de la galerie Victor Emmanuel II"
+      },
+      "accommodation": {
+        "name": "Hôtel Milano",
+        "type": "Hotel",
+        "price": 150,
+        "reserved": true,
+        "notes": "Proche de la Gare Centrale",
+        "url": "https://www.hotelmilanocentrale.it"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 9
+        },
+        "dejeuner": {
+          "price": 25
+        },
+        "diner": {
+          "price": 35
+        }
+      },
+      "transports": [
+        {
+          "id": 3,
+          "type": "plane",
+          "description": "Vol Milan-Rome",
+          "price": "100"
+        }
+      ],
+      "activities": [
+        {
+          "id": 3,
+          "description": "Visite du Duomo",
+          "price": "70"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Jour 4 - Venise",
+      "date": "2024-12-27",
+      "location": {
+        "name": "Venise",
+        "lat": 45.4408,
+        "lon": 12.3155
+      },
+      "generalInfo": {
+        "planning": "Promenade en gondole et visite de la place Saint-Marc"
+      },
+      "accommodation": {
+        "name": "Hôtel Venezia",
+        "type": "Hotel",
+        "price": 180,
+        "reserved": true,
+        "notes": "Proche de la Place Saint-Marc",
+        "url": "https://www.hotelvenezia.it"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 10
+        },
+        "dejeuner": {
+          "price": 28
+        },
+        "diner": {
+          "price": 40
+        }
+      },
+      "transports": [
+        {
+          "id": 4,
+          "type": "boat",
+          "description": "Gondole",
+          "price": "80"
+        }
+      ],
+      "activities": [
+        {
+          "id": 4,
+          "description": "Promenade en gondole",
+          "price": "50"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jour 5 - Naples",
+      "date": "2024-12-28",
+      "location": {
+        "name": "Naples",
+        "lat": 40.8522,
+        "lon": 14.2681
+      },
+      "generalInfo": {
+        "planning": "Visite du Vésuve et du musée archéologique"
+      },
+      "accommodation": {
+        "name": "Hôtel Vesuvio",
+        "type": "Hotel",
+        "price": 110,
+        "reserved": true,
+        "notes": "Proche du Vésuve",
+        "url": "https://www.hotelvesuvio.it"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 7
+        },
+        "dejeuner": {
+          "price": 18
+        },
+        "diner": {
+          "price": 25
+        }
+      },
+      "transports": [
+        {
+          "id": 5,
+          "type": "bus",
+          "description": "Bus local",
+          "price": "15"
+        }
+      ],
+      "activities": [
+        {
+          "id": 5,
+          "description": "Visite du Vésuve",
+          "price": "80"
+        }
+      ]
+    }
+  ]
+}

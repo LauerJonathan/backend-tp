@@ -1,0 +1,244 @@
+{
+  "id": 1735019257788,
+  "name": "Voyage États-Unis 2024",
+  "color": "#4169e1",
+  "font": "Arial",
+  "textColor": "#ffffff",
+  "days": [
+    {
+      "id": 1735019264969,
+      "name": "Jour 1 - New York",
+      "date": "2024-03-05",
+      "location": {
+        "name": "New York",
+        "lat": 40.7128,
+        "lon": -74.006
+      },
+      "generalInfo": {
+        "planning": "Visite de la Statue de la Liberté et de Times Square"
+      },
+      "accommodation": {
+        "name": "Hôtel Manhattan",
+        "type": "Hotel",
+        "price": 180,
+        "reserved": true,
+        "notes": "Vue sur Times Square",
+        "url": "https://www.hotelmanhattan.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 12
+        },
+        "dejeuner": {
+          "price": 25
+        },
+        "diner": {
+          "price": 40
+        }
+      },
+      "transports": [
+        {
+          "id": 1,
+          "type": "subway",
+          "description": "Metro de New York",
+          "price": "3"
+        }
+      ],
+      "activities": [
+        {
+          "id": 1,
+          "description": "Visite guidée de la Statue de la Liberté",
+          "price": "55"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jour 2 - Washington D.C.",
+      "date": "2024-03-06",
+      "location": {
+        "name": "Washington D.C.",
+        "lat": 38.9072,
+        "lon": -77.0369
+      },
+      "generalInfo": {
+        "planning": "Visite du National Mall et du Lincoln Memorial"
+      },
+      "accommodation": {
+        "name": "Hôtel D.C. Central",
+        "type": "Hotel",
+        "price": 150,
+        "reserved": true,
+        "notes": "Proche du Lincoln Memorial",
+        "url": "https://www.hoteldccentral.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 10
+        },
+        "dejeuner": {
+          "price": 18
+        },
+        "diner": {
+          "price": 35
+        }
+      },
+      "transports": [
+        {
+          "id": 2,
+          "type": "bus",
+          "description": "Bus touristique",
+          "price": "12"
+        }
+      ],
+      "activities": [
+        {
+          "id": 2,
+          "description": "Visite guidée du National Mall",
+          "price": "40"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Jour 3 - Los Angeles",
+      "date": "2024-03-07",
+      "location": {
+        "name": "Los Angeles",
+        "lat": 34.0522,
+        "lon": -118.2437
+      },
+      "generalInfo": {
+        "planning": "Visite de Hollywood et du Griffith Observatory"
+      },
+      "accommodation": {
+        "name": "Hôtel Hollywood",
+        "type": "Hotel",
+        "price": 160,
+        "reserved": true,
+        "notes": "Vue sur les collines de Hollywood",
+        "url": "https://www.hotelhollywood.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 10
+        },
+        "dejeuner": {
+          "price": 20
+        },
+        "diner": {
+          "price": 30
+        }
+      },
+      "transports": [
+        {
+          "id": 3,
+          "type": "car",
+          "description": "Voiture privée",
+          "price": "50"
+        }
+      ],
+      "activities": [
+        {
+          "id": 3,
+          "description": "Visite guidée de Hollywood",
+          "price": "45"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Jour 4 - San Francisco",
+      "date": "2024-03-08",
+      "location": {
+        "name": "San Francisco",
+        "lat": 37.7749,
+        "lon": -122.4194
+      },
+      "generalInfo": {
+        "planning": "Visite du Golden Gate Bridge et de Fisherman's Wharf"
+      },
+      "accommodation": {
+        "name": "Hôtel Golden Gate",
+        "type": "Hotel",
+        "price": 170,
+        "reserved": true,
+        "notes": "Vue sur le Golden Gate",
+        "url": "https://www.hotelgoldengate.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 8
+        },
+        "dejeuner": {
+          "price": 22
+        },
+        "diner": {
+          "price": 35
+        }
+      },
+      "transports": [
+        {
+          "id": 4,
+          "type": "bus",
+          "description": "Bus touristique",
+          "price": "15"
+        }
+      ],
+      "activities": [
+        {
+          "id": 4,
+          "description": "Visite du Golden Gate Bridge",
+          "price": "20"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jour 5 - Las Vegas",
+      "date": "2024-03-09",
+      "location": {
+        "name": "Las Vegas",
+        "lat": 36.1699,
+        "lon": -115.1398
+      },
+      "generalInfo": {
+        "planning": "Visite du Strip et du Fremont Street Experience"
+      },
+      "accommodation": {
+        "name": "Hôtel Bellagio",
+        "type": "Hotel",
+        "price": 250,
+        "reserved": true,
+        "notes": "Vue sur le lac Bellagio",
+        "url": "https://www.hotelbellagio.com"
+      },
+      "food": {
+        "petitDejeuner": {
+          "price": 12
+        },
+        "dejeuner": {
+          "price": 30
+        },
+        "diner": {
+          "price": 45
+        }
+      },
+      "transports": [
+        {
+          "id": 5,
+          "type": "taxi",
+          "description": "Taxi local",
+          "price": "20"
+        }
+      ],
+      "activities": [
+        {
+          "id": 5,
+          "description": "Spectacle au Cirque du Soleil",
+          "price": "80"
+        }
+      ]
+    }
+  ]
+}
