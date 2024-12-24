@@ -1,8 +1,9 @@
 // src/redux/features/travelPlansSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+require("dotenv").config();
 
-const API_URL = "http://localhost:5001/api/travelplan";
+const API_URL = process.env.REDUX_URL;
 
 // Thunks
 export const fetchTravelPlans = createAsyncThunk(
@@ -75,9 +76,7 @@ const travelPlansSlice = createSlice({
       })
       // Delete travel plan
       .addCase(deleteTravelPlan.fulfilled, (state, action) => {
-        state.items = state.items.filter(
-          (plan) => plan.id !== action.payload
-        );
+        state.items = state.items.filter((plan) => plan.id !== action.payload);
       });
   },
 });
