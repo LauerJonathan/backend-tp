@@ -1,122 +1,152 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config(); // Load environment variables from a .env file
+require("dotenv").config();
 
 const app = express();
 
 // Middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing for all routes
-app.use(express.json()); // Parse incoming JSON requests
+app.use(cors());
+app.use(express.json());
 
 // MongoDB Configuration
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/agcDashboard") // Connect to the MongoDB database using the URI from environment variables or a fallback local URI
-  .then(() => console.log("Connected to MongoDB")) // Log successful connection
-  .catch((err) => console.error("Error connecting to MongoDB:", err)); // Handle and log connection errors
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/travelplan")
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-// Define a Mongoose schema for the Travel Plan
-const travelPlanSchema = new mongoose.Schema({
-  color: {
-    type: String,
-    required: true,
-    default: "#ffb268", // Default color for the plan
-  },
-  days: {
-    type: [String], // Array of strings representing days
-    default: [], // Default is an empty array
-  },
-  font: {
-    type: String,
-    required: true,
-    default: "Arial", // Default font for the plan
-  },
+// Define the Day Schema
+const daySchema = new mongoose.Schema({
   id: {
     type: Number,
-    required: true, // Unique identifier for the plan
+    required: true,
   },
   name: {
     type: String,
     required: true,
-    default: "Rome", // Default name for the travel plan
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+});
+
+// Define the Travel Plan Schema
+const travelPlanSchema = new mongoose.Schema({
+  color: {
+    type: String,
+    required: true,
+    default: "#ffb268",
+  },
+  days: {
+    type: [daySchema],
+    default: [],
+  },
+  font: {
+    type: String,
+    required: true,
+    default: "Arial",
+  },
+  id: {
+    type: Number,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+    default: "Rome",
   },
   notes: {
-    type: [String], // Array of strings for notes
-    default: [], // Default is an empty array
+    type: [String],
+    default: [],
   },
   textColor: {
     type: String,
     required: true,
-    default: "#000000", // Default text color for the plan
+    default: "#000000",
   },
 });
 
-const TravelPlan = mongoose.model("TravelPlan", travelPlanSchema); // Create a Mongoose model using the schema
+const TravelPlan = mongoose.model("TravelPlan", travelPlanSchema);
 
 // Routes
 
 // GET - Retrieve all travel plans
 app.get("/api/travelplan", async (req, res) => {
   try {
-    const travelplans = await TravelPlan.find(); // Fetch all travel plan documents
-    res.json(travelplans); // Respond with the list of travel plans in JSON format
+    const travelplans = await TravelPlan.find();
+    res.json(travelplans);
   } catch (error) {
-    res.status(500).json({ message: error.message }); // Handle and respond with server errors
+    res.status(500).json({ message: error.message });
   }
 });
 
-// GET - Retrieve a specific travel plan by ID
+// GET - Retrieve a specific travel plan by numerical id (not MongoDB _id)
 app.get("/api/travelplan/:id", async (req, res) => {
   try {
-    const travelplan = await TravelPlan.findById(req.params.id); // Find travel plan by ID
+    const travelplan = await TravelPlan.findOne({
+      id: parseInt(req.params.id),
+    });
     if (!travelplan) {
-      return res.status(404).json({ message: "Travel plan not found" }); // Return 404 if plan doesn't exist
+      return res.status(404).json({ message: "Travel plan not found" });
     }
-    res.json(travelplan); // Respond with the found travel plan
+    res.json(travelplan);
   } catch (error) {
-    res.status(500).json({ message: error.message }); // Handle and respond with server errors
+    res.status(500).json({ message: error.message });
   }
 });
 
 // POST - Create a new travel plan
 app.post("/api/travelplan", async (req, res) => {
-  const travelplan = new TravelPlan(req.body); // Create a new travel plan instance with the request body
   try {
-    const newTravelplan = await travelplan.save(); // Save the plan to the database
-    res.status(201).json(newTravelplan); // Respond with the created plan and a 201 status
+    const travelplan = new TravelPlan({
+      ...req.body,
+      days: req.body.days || [], // Ensure days is an array even if not provided
+    });
+    const newTravelplan = await travelplan.save();
+    res.status(201).json(newTravelplan);
   } catch (error) {
-    res.status(400).json({ message: error.message }); // Handle and respond with validation or client errors
+    res.status(400).json({ message: error.message });
   }
 });
 
 // PUT - Update an existing travel plan
 app.put("/api/travelplan/:id", async (req, res) => {
   try {
-    const travelplan = await TravelPlan.findByIdAndUpdate(
-      req.params.id,
+    const travelplan = await TravelPlan.findOneAndUpdate(
+      { id: parseInt(req.params.id) },
       req.body,
       {
-        new: true, // Return the updated document
+        new: true,
+        runValidators: true, // This ensures update validation
       }
     );
-    res.json(travelplan); // Respond with the updated travel plan
+    if (!travelplan) {
+      return res.status(404).json({ message: "Travel plan not found" });
+    }
+    res.json(travelplan);
   } catch (error) {
-    res.status(400).json({ message: error.message }); // Handle and respond with client errors
+    res.status(400).json({ message: error.message });
   }
 });
 
 // DELETE - Delete a travel plan
 app.delete("/api/travelplan/:id", async (req, res) => {
   try {
-    await TravelPlan.findByIdAndDelete(req.params.id); // Delete the plan by ID
-    res.json({ message: "Travel plan deleted" }); // Respond with a confirmation message
+    const travelplan = await TravelPlan.findOneAndDelete({
+      id: parseInt(req.params.id),
+    });
+    if (!travelplan) {
+      return res.status(404).json({ message: "Travel plan not found" });
+    }
+    res.json({ message: "Travel plan deleted" });
   } catch (error) {
-    res.status(500).json({ message: error.message }); // Handle and respond with server errors
+    res.status(500).json({ message: error.message });
   }
 });
 
 // Start the server
-const PORT = process.env.PORT || 5001; // Use the port from environment variables or a default port (5001)
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`); // Log that the server is running
+  console.log(`Server started on port ${PORT}`);
 });

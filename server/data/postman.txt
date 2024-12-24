@@ -1,0 +1,48 @@
+GET http://localhost:5001/api/travelplan
+
+GET http://localhost:5001/api/travelplan/1735013603819
+
+POST http://localhost:5001/api/travelplan
+Content-Type: application/json
+
+{
+    "color": "#ffb268",
+    "days": [
+        {
+            "id": 1735016074717,
+            "name": "Nouveau jour",
+            "date": "2024-12-24"
+        }
+    ],
+    "font": "Arial",
+    "id": 1735013603818,
+    "name": "Rome",
+    "notes": [],
+    "textColor": "#000000"
+}
+
+PUT http://localhost:5001/api/travelplan/1735013603818
+Content-Type: application/json
+
+{
+    "color": "#ffb268",
+    "days": [
+        {
+            "id": 1735016074717,
+            "name": "Jour modifié",
+            "date": "2024-12-24"
+        },
+        {
+            "id": 1735016074718,
+            "name": "Nouveau jour 2",
+            "date": "2024-12-25"
+        }
+    ],
+    "font": "Arial",
+    "id": 1735013603818,
+    "name": "Rome Updated",
+    "notes": ["Note de voyage"],
+    "textColor": "#000000"
+}
+
+DELETE http://localhost:5001/api/travelplan/1735013603818
