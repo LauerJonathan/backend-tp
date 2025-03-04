@@ -52,7 +52,7 @@ Planned production URL: `http://www.jonathanlauer.fr/API/travelplan`
 
 ## API Documentation
 
-[To be completed with your API endpoints]
+[To be completed with API endpoints]
 
 ## Contributing
 
